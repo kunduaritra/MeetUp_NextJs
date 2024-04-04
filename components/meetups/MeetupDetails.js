@@ -2,19 +2,15 @@ import { DUMMY_MEETUPS } from "../../pages";
 import Card from "../ui/Card";
 import classes from "./MeetupItem.module.css";
 
-const MeetupDetails = ({ meetupId }) => {
-  const meetupData = Object.values(DUMMY_MEETUPS).find(
-    (meetup) => meetup.id === meetupId
-  );
-
+const MeetupDetails = (props) => {
   return (
     <Card>
       <div className={classes.image}>
-        <img src={meetupData.image} alt={meetupData.title} />
+        <img src={props.image} alt={props.title} />
       </div>
       <div className={classes.content}>
-        <h3>{meetupData.title}</h3>
-        <address>{meetupData.address}</address>
+        <h3>{props.title}</h3>
+        <address>{props.address}</address>
       </div>
     </Card>
   );
